@@ -14,5 +14,4 @@ ui.button("Validate",on_click=validate(name,email))
 
 
 
-
 ui.run()
