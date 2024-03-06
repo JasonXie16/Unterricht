@@ -34,48 +34,6 @@ for Stufen in range(0,len(data_nicegui)):
     rows[Stufen]['Jahrgang'] = newline[6]
     rows[Stufen]['Runde'] = newline[7]
     
-
-
-    
-
-'''
-rows = [
-    {'name': 'Alice', 'age': 18},
-    {'name': 'Bob', 'age': 21},
-    {'name': 'Carol'},
-]
-'''
-
-teilenhmer1 = []
-teilenhmer2 = []
-teilenhmer3 = []
-'''
-for oneRow in rows:	
-    teilnehmer = 0
-    for oneitem in oneRow:
-        if oneitem == '1.Preis' or oneitem == '2.Preis' or oneitem == 'Auszeichnung' or oneitem == "Anerkennung":
-            if oneRow[oneitem].isnumeric() == True:
-                teilnehmer += int(oneRow[oneitem])
-    if oneRow['Runde'] == '1':
-        teilenhmer1.append(teilnehmer)
-    elif oneRow['Runde'] == '2':
-        teilenhmer2.append(teilnehmer)
-    elif oneRow['Runde'] == '3':
-        teilenhmer3.append(teilnehmer)
-sums1 = []
-sums2 = []
-sums3 = []
-print(teilenhmer1)
-for i in range(0, len(teilenhmer1), 5):
-    current_sum = sum(teilenhmer1[i:i+5])
-    sums1.append(current_sum)
-for i in range(0, len(teilenhmer2), 5):
-    current_sum = sum(teilenhmer2[i:i+5])
-    sums2.append(current_sum)
-for i in range(0, len(teilenhmer3), 3):
-    current_sum = sum(teilenhmer3[i:i+3])
-    sums3.append(current_sum)
-'''
 fig = {
     'data': [
         {
@@ -142,7 +100,6 @@ def change(value):
     },
 }   
     plotly.update_figure(fig)
-choice = 0
 select1 = ui.select(["Gesamt","1.Preis","2.Preis","Auszeichnung","Anerkennung","Teilnahme"], value = "Gesamt",on_change= lambda i: change(i.value),)
 rows.sort(key=lambda x: x['Jahrgang'] , reverse=True)
 print("rows after sort: " ,rows)
